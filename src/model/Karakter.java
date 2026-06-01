@@ -74,10 +74,7 @@ public class Karakter {
         return this.tipus == other.tipus;
     }
     
-    private void mozgas(int ujPoz){
-        setPoz(ujPoz);
-        
-    }
+    
     
     
     

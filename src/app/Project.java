@@ -4,6 +4,7 @@
  */
 package app;
 
+import java.util.Random;
 import model.JatekTer;
 import model.Karakter;
 
@@ -17,6 +18,8 @@ public class Project {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Random RND = new Random();
+        
         Karakter k1 = new Karakter('h', 0);
         Karakter k2 = new Karakter('v', 0);
         
@@ -27,6 +30,24 @@ public class Project {
         karakterek[0] = k1;
         
         JatekTer j = new JatekTer(karakterek);
+        
+        
+        while (true) {            
+            int m1 = RND.nextInt(j.getMaxPoz());
+            int m2 = RND.nextInt(j.getMaxPoz());
+            k1.setPoz(m1);
+            k2.setPoz(m2);
+            
+            j.pozEllenorzes();
+            
+            System.out.println(k1.toString() + " | " + k2.toString() + "\n-------------------------------");
+            
+            if(k1.getHp() == 0 || k2.getHp() == 0){
+                break;
+            }
+        }
+        
+        
     }
     
 }
